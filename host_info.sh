@@ -33,7 +33,7 @@ get_cpu_architecture() {
 			}
 get_cpu_model() {
 
-		get_lscpu_value "Model name"
+		get_lscpu_value "Model"
                 cpu_model=$value
 		}
 
@@ -54,10 +54,10 @@ get_cpu_model
 get_cpu_mhz
 get_l2_cache
 total_mem=$(vmstat --unit M | tail -1 | awk '{print $4}') 
-#timestamp=$(date  "+%Y-%d-%m %H:%M:%S") 
+
 timestamp=$(date) 
 
-#Step 2 Construct insert statment
+
 insert_stmt=$(cat <<-END
 INSERT INTO host_info (hostname,cpu_number,cpu_architecture,cpu_model,cpu_mhz,l2_cache,total_mem,"timestamp")
 VALUES('${hostname}',2,'${cpu_architecture}','${cpu_model}',${cpu_mhz},${L2_cache},${total_mem}, '${timestamp}');
@@ -65,7 +65,6 @@ END
 )
 echo $insert_stmt
 
-#Step 3:Execute INSERT statement
 export PGPASSWORD=$password
 psql -h $psql_host -p $port -U $user_name -d $db_name -c "$insert_stmt"
 sleep 1
