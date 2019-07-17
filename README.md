@@ -5,7 +5,8 @@
 <p>This monitoring agent can be helpful for Infrastructure managers to keep track of hardwares and resource usage. We persist the data in a RDBMS. </p>
 <h1 id="java-grep-app" Design</h1>
 
-![Architecture](C:%5CUsers%5CDefault.DESKTOP-UG8FM9U%5CDownloads%5Clinux.png)
+<h2>Design</h2>
+![Architecture](Linux.png)
 
 <h2 id="usage">Usage</h2>
 <h3> Tables </h3>
