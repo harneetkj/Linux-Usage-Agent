@@ -6,7 +6,7 @@
 <h1 id="java-grep-app" Design</h1>
 
 <h2>Design</h2>
-![Architecture](Linux.png)
+<img src="/Linux.png">
 
 <h2 id="usage">Usage</h2>
 <h3> Tables </h3>
